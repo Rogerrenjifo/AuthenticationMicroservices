@@ -17,21 +17,21 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
-
- 	<dependency>
- 		<groupId>org.springframework.cloud</groupId>
- 		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
- 		<version>4.1.1</version>
- 	</dependency>
+		<!-- dependency for discovery service used to  -->
+ 		<!-- <dependency>
+ 			<groupId>org.springframework.cloud</groupId>
+ 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+ 			<version>4.1.1</version>
+ 		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -53,12 +53,7 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<!-- 	
-   		<dependency>
-     		<groupId>org.springframework.session</groupId>
-     		<artifactId>spring-session-core</artifactId>
-   		</dependency> -->
- </dependencies>
+ 	</dependencies>
 
 	<build>
 		<plugins>

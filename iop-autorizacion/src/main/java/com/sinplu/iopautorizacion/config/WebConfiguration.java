@@ -22,18 +22,4 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .allowCredentials(true);
     }
-
-    // @Bean
-    // public CorsFilter corsFilter() {
-    // UrlBasedCorsConfigurationSource source = new
-    // UrlBasedCorsConfigurationSource();
-    // CorsConfiguration config = new CorsConfiguration();
-    // config.setAllowCredentials(true);
-    // config.addAllowedOrigin("*"); // Esto debería ser más específico en
-    // producción
-    // config.addAllowedHeader("*");
-    // config.addAllowedMethod("*");
-    // source.registerCorsConfiguration("/**", config);
-    // return new CorsFilter(source);
-    // }
 }
