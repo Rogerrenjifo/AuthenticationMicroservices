@@ -25,8 +25,6 @@ public class ClientConfig {
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .redirectUri("http://127.0.0.1:8080/login/oauth2/code/oidc-client")
                 .redirectUri("http://localhost:3000/cd-callback/login")
-                // .redirectUri("http://127.0.0.1:8080/authorized")
-                // .redirectUri("https://oauthdebugger.com/debug")
                 .postLogoutRedirectUri("http://127.0.0.1:8080/")
                 .postLogoutRedirectUri("http://localhost:3000/cd-callback/logout")
                 .scope(OidcScopes.OPENID)
