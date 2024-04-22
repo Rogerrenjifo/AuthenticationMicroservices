@@ -1,5 +1,6 @@
 package com.sinplu.iopautorizacion.config;
 
+import java.time.Duration;
 import java.util.UUID;
 
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ import org.springframework.security.oauth2.server.authorization.client.InMemoryR
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.settings.ClientSettings;
+import org.springframework.security.oauth2.server.authorization.settings.TokenSettings;
 
 @Configuration
 public class ClientConfig {
@@ -30,6 +32,12 @@ public class ClientConfig {
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+                .tokenSettings(TokenSettings.builder()
+                    .accessTokenTimeToLive(Duration.ofHours(5))
+                    .refreshTokenTimeToLive(Duration.ofDays(3))
+                    .build()
+                )
+                
                 .build();
 
         return new InMemoryRegisteredClientRepository(oidcClient);

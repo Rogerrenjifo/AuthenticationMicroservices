@@ -23,8 +23,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf-> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.GET, "/resources/authorities").hasAuthority("read")
+                        .requestMatchers("/user/**","/error").permitAll()
                         // .requestMatchers(HttpMethod.POST, "/resources/**").hasAuthority("SCOPE_write")
                         .anyRequest().authenticated())
                 .oauth2ResourceServer((oauth2) -> oauth2

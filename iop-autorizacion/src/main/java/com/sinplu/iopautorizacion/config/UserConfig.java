@@ -7,16 +7,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-@Configuration
-public class UserConfig {
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails userDetails = User.withUsername("user")
-                .password("password")
-                .roles("USER")
-                .authorities("read")
-                .build();
+// @Configuration
+// public class UserConfig {
+//     @Bean
+//     public UserDetailsService userDetailsService() {
+//         UserDetails userDetails = User.withUsername("user")
+//                 .password("password")
+//                 .roles("USER")
+//                 .authorities("read")
+//                 .build();
 
-        return new InMemoryUserDetailsManager(userDetails);
-    }
-}
+//         return new InMemoryUserDetailsManager(userDetails);
+//     }
+// }
